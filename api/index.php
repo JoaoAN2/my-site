@@ -15,4 +15,5 @@ $path = explode("/", $_GET['path']);
 $method = $_SERVER["REQUEST_METHOD"];
 
 $db = new DB($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_TYPE']);
-$pdo = $db->connect();
+$pdo = $db->getPDO();
+var_dump($pdo);
