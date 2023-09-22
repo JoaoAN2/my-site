@@ -18,15 +18,15 @@ class DB {
         $this->connect();
     }
 
-    public function getPDO() {
+    public function getPDO(): PDO {
         return $this->pdo;
     }
 
-    public function connect() {
+    public function connect(): void {
         $this->pdo = new PDO("{$this->databasetype}:host={$this->host};dbname={$this->databasename}", $this->username, $this->password);
     }
 
-    public function close() {
+    public function close(): void {
         $this->pdo = null;
     }
 }
