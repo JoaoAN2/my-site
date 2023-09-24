@@ -24,6 +24,7 @@ class DB {
 
     public function connect(): void {
         $this->pdo = new PDO("{$this->databasetype}:host={$this->host};dbname={$this->databasename}", $this->username, $this->password);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function close(): void {
